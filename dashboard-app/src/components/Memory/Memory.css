@@ -1,0 +1,8 @@
+.memory-wrapper {
+    margin: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 50%;
+    height: 35vh;
+    padding: 15px;
+}

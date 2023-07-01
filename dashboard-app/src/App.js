@@ -1,18 +1,16 @@
-import './App.css';
-import Sidebar from './components/Sidebar';
-import Cpu from './pages/Cpu';
+import "./App.css";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import React from 'react';
+import { Dashboard } from "./pages/Dashboard/Dashboard";
 
-const App = () => {
+function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Sidebar />} />
-        <Route path="cpu" element={<Cpu />} />
+        <Route exact path="/" element={<Dashboard />} />
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;

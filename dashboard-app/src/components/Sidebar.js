@@ -28,8 +28,8 @@ const Sidebar = () => {
 
                 <CDBSidebarContent className="sidebar-content">
                     <CDBSidebarMenu>
-                        <NavLink exact to="/cpu"  activeClassName="activeClicked">
-                            <CDBSidebarMenuItem icon="columns">CPU</CDBSidebarMenuItem>
+                        <NavLink exact to="/"  activeClassName="activeClicked">
+                            <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
                         </NavLink>
                         <NavLink exact to="/tables" activeClassName="activeClicked">
                             <CDBSidebarMenuItem icon="table">Memory</CDBSidebarMenuItem>
@@ -42,27 +42,8 @@ const Sidebar = () => {
                                 Wifi
                             </CDBSidebarMenuItem>
                         </NavLink>
-
-                        <NavLink
-                            exact
-                            to="/hero404"
-                            target="_blank"
-                            activeClassName="activeClicked"
-                        >
-                            <CDBSidebarMenuItem icon="exclamation-circle">
-                                404 page
-                            </CDBSidebarMenuItem>
-                        </NavLink>
                     </CDBSidebarMenu>
                 </CDBSidebarContent>
-
-                <CDBSidebarFooter style={{ textAlign: "center" }}>
-                    <div style={{ padding: "20px 5px" }}>
-                        <NavLink exact to="/info" activeClassName="activeClicked">
-                            <CDBSidebarMenuItem icon="info">Info</CDBSidebarMenuItem>
-                        </NavLink>
-                    </div>
-                </CDBSidebarFooter>
             </CDBSidebar>
         </div>
     );
