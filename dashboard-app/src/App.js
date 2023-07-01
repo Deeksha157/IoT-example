@@ -8,12 +8,8 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/">
-          <Sidebar />
-        </Route>
-        <Route path="/cpu">
-          <Cpu />
-        </Route>
+        <Route exact path="/" element={<Sidebar />} />
+        <Route path="cpu" element={<Cpu />} />
       </Routes>
     </Router>
   );
