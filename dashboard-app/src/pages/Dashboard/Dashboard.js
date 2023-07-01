@@ -11,6 +11,7 @@ export const Dashboard = () => {
   useEffect(() => {
   }, []);
 
+ 
   return (
     <div className="dashboard d-flex">
       <div>
@@ -26,13 +27,17 @@ export const Dashboard = () => {
           overflowX: "hidden",
           width: "auto",
         }}
-        >
+      >
         <Navbar />
         <Subheader title="Dashboard" />
 
-        <div>
-          {/* system-info */}
-        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
 
         <div
           style={{
