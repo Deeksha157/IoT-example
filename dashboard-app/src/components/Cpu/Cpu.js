@@ -12,25 +12,8 @@ import {
 } from "recharts";
 import axios from "axios";
 
-const Cpu = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:8080/api/performance-info");
-        setData(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    const intervalId = setInterval(fetchData, 2000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
+const Cpu = (props) => {
+  const {data} = props;
 
   return (
     <div className="cpu-wrapper">

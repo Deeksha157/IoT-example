@@ -1,43 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Memory.css";
 import {
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   AreaChart,
   Area,
 } from "recharts";
-import axios from "axios";
 
-const Memory = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:8080/api/performance-info");
-        setData(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    const intervalId = setInterval(fetchData, 2000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
+const Memory = (props) => {
+  const { data } = props;
+  const label = "Memory Usage";
 
   return (
     <div className="memory-wrapper">
       <ResponsiveContainer width="100%" height="100%" padding="10px">
         <AreaChart
           width={500}
-          height={200}
+          height={300}
           data={data}
           syncId="anyId"
           margin={{
@@ -51,7 +33,12 @@ const Memory = () => {
           <XAxis dataKey="datetime" />
           <YAxis />
           <Tooltip />
-          <Area type="monotone" dataKey="memoryUsage" stroke="#f29400" fill="#f29400" />
+          <Area
+            type="monotone"
+            dataKey="memoryUsage"
+            stroke="#f29400"
+            fill="#f29400"
+          />
         </AreaChart>
       </ResponsiveContainer>
     </div>
