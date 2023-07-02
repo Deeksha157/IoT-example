@@ -8,10 +8,8 @@ import Cpu from "../../components/Cpu/Cpu";
 import Memory from "../../components/Memory/Memory";
 
 export const Dashboard = () => {
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
- 
   return (
     <div className="dashboard d-flex">
       <div>
@@ -30,7 +28,6 @@ export const Dashboard = () => {
       >
         <Navbar />
         <Subheader title="Dashboard" />
-
         <div
           style={{
             display: "flex",
@@ -38,15 +35,15 @@ export const Dashboard = () => {
             alignItems: "center",
           }}
         >
-
-        <div
-          style={{
-            display: "flex",
-            flexFlow: "row",
-          }}  
-        >
-          <Cpu />
-          <Memory />
+          <div
+            style={{
+              display: "flex",
+              flexFlow: "row",
+            }}
+          >
+            <Cpu />
+            <Memory />
+          </div>
         </div>
       </div>
     </div>
