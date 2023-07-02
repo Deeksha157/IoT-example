@@ -10,10 +10,15 @@ import {
   AreaChart,
   Area,
 } from "recharts";
-import axios from "axios";
 
 const Cpu = (props) => {
   const {data} = props;
+
+  const formatTick = (tick) => {
+    const date = new Date(tick);
+    const formattedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return formattedTime;
+  };
 
   return (
     <div className="cpu-wrapper">
@@ -31,7 +36,7 @@ const Cpu = (props) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="datetime" />
+          <XAxis dataKey="datetime" tickFormatter={formatTick}/>
           <YAxis />
           <Tooltip />
           <Area type="monotone" dataKey="cpuUsage" stroke="#f29400" fill="#f29400" />

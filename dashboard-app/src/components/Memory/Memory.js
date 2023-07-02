@@ -12,7 +12,12 @@ import {
 
 const Memory = (props) => {
   const { data } = props;
-  const label = "Memory Usage";
+  
+  const formatTick = (tick) => {
+    const date = new Date(tick);
+    const formattedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return formattedTime;
+  };
 
   return (
     <div className="memory-wrapper">
@@ -30,7 +35,7 @@ const Memory = (props) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="datetime" />
+          <XAxis dataKey="datetime" tickFormatter={formatTick}/>
           <YAxis />
           <Tooltip />
           <Area
